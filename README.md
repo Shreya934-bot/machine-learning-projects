@@ -1,48 +1,157 @@
-# 🚀 Machine Learning Projects Portfolio
+# 🔧 Predictive Maintenance of Boiler System
 
-Hi, I’m building a collection of machine learning projects focused on solving real-world problems across different domains.
+## 📌 Overview
 
----
+This project focuses on predicting potential failures in industrial boiler systems using machine learning.
+It combines classification and regression models to estimate both **whether a failure will occur within 7 days** and **how many days remain before failure**.
 
-## 🔧 Featured Projects
-
-### 🔥 Predictive Maintenance of Boiler System
-
-* Predicts failure within 7 days (classification)
-* Estimates time to failure (regression)
-* Includes Streamlit app for real-time predictions
-* Inspired by real-world thermal power plant scenario
-
-👉 [View Project](./predictive-maintenance)
+The goal is to enable **proactive maintenance**, reduce downtime, and improve operational safety.
 
 ---
 
-### 🌾 Crop Yield Prediction *(coming soon)*
+## 🏭 Real-World Context
 
-* Predict agricultural output using environmental data
+This project is inspired by a real-world industrial scenario from a **thermal power plant (Rosa)**, where boiler systems are critical infrastructure.
 
----
+Failures in such systems can lead to:
 
-### 🔐 Malicious URL Detection *(coming soon)*
+* ⚠️ Unexpected downtime
+* 💸 High maintenance costs
+* 🔥 Safety risks
 
-* Classify URLs as safe or phishing
-
----
-
-### 🌊 Sonar Rock vs Mine Classification *(coming soon)*
-
-* Binary classification using sonar signal data
+This project simulates a **predictive maintenance system** using historical sensor data to anticipate failures before they occur.
 
 ---
 
-## 🧠 Skills Demonstrated
+## ❗ Problem Statement
 
-* Data Cleaning & Preprocessing
-* Feature Engineering
-* Classification & Regression Models
-* Model Evaluation
-* Streamlit App Development
-* Real-world Problem Solving
+Traditional maintenance strategies are:
+
+* **Reactive** → Fix after failure
+* **Scheduled** → Maintenance at fixed intervals
+
+Both approaches are inefficient.
+
+This project aims to build a **data-driven predictive system** that:
+
+* Identifies failures in advance
+* Estimates remaining useful life
+* Supports smarter maintenance decisions
+
+---
+
+## 🚀 Key Features
+
+* 🔍 **Failure Prediction (Classification)**
+  Predicts whether a system will fail within the next 7 days
+
+* ⏳ **Time-to-Failure Estimation (Regression)**
+  Predicts number of days remaining before failure
+
+* ⚠️ **Risk Categorization**
+
+  * High (≤ 3 days)
+  * Medium (≤ 7 days)
+  * Low (> 7 days)
+
+* 📊 **Interactive Visualization**
+
+  * Risk distribution chart
+
+* 📥 **CSV Upload & Download**
+
+  * Upload sensor data
+  * Download predictions
+
+---
+
+## ⚙️ Machine Learning Pipeline
+
+1. **Data Collection**
+
+   * Industrial boiler sensor dataset
+
+2. **Data Preprocessing**
+
+   * Handling missing values
+   * Removing invalid inputs
+   * Feature scaling
+
+3. **Feature Engineering**
+
+   * Preparing input features for model performance
+
+4. **Model Building**
+
+   * Random Forest Classifier → Failure prediction
+   * Random Forest Regressor → Days to failure
+
+5. **Model Evaluation**
+
+   * Classification → Accuracy, F1-score
+   * Regression → Mean Absolute Error
+
+6. **Deployment**
+
+   * Streamlit web application for real-time usage
+
+---
+
+## 🖥️ Streamlit Application
+
+An interactive web app allows users to:
+
+* Upload boiler sensor data
+* Get instant predictions
+* Visualize risk distribution
+* Download results
+
+### ▶️ Run locally:
+
+```bash
+streamlit run app/app.py
+```
+
+---
+
+## 📁 Project Structure
+
+```bash
+predictive-maintenance/
+│
+├── notebook/
+│   └── boiler_predictive_maintenance.ipynb
+│
+├── data/
+│   └── boiler_dataset.xlsx
+│
+├── models/
+│   ├── rf_classifier_model.pkl
+│   ├── rf_regressor_model.pkl
+│   └── scaler_regression_model.pkl
+│
+├── app/
+│   └── app.py
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 📊 Sample Output
+
+* Will Fail in 7 Days → Yes / No
+* Predicted Days to Failure
+* Risk Level (High / Medium / Low)
+
+---
+
+## 📈 Key Insights
+
+* High-risk systems typically fail within **3 days**
+* Clean data significantly improves prediction accuracy
+* Combining classification + regression provides better decision support
 
 ---
 
@@ -52,14 +161,26 @@ Hi, I’m building a collection of machine learning projects focused on solving 
 * Pandas, NumPy
 * Scikit-learn
 * Streamlit
-* Matplotlib / Altair
+* Altair
 
 ---
 
-## 📈 Goal
+## 🎯 Use Case
 
-To build practical, end-to-end machine learning solutions and continuously improve by learning in public.
+This project demonstrates how machine learning can be applied in industrial systems to:
+
+* Reduce unexpected failures
+* Optimize maintenance schedules
+* Improve system reliability
 
 ---
 
-⭐ More projects coming soon — stay tuned.
+## 🔮 Future Improvements
+
+* Deploy the app online
+* Integrate real-time sensor data
+* Experiment with advanced models (XGBoost, Deep Learning)
+
+---
+
+🚀 Built as part of my machine learning portfolio with a focus on solving real-world industrial problems.
